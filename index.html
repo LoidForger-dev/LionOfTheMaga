@@ -105,25 +105,40 @@
       flex-wrap: wrap;
       gap: 15px;
     }
+
+    /* Rounded logo container */
+    .logo {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #F5C24A;
+      box-shadow: 0 0 20px #F5C24A;
+      background: #1E2A44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .logo img {
-      width: 65px;          /* Adjust size as needed */
-  height: 65px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #F5C24A;        /* Gold border */
-  box-shadow: 0 0 20px #F5C24A;     /* Glow effect */
-  background: #1E2A44;              /* Fallback background */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    }
-    .logo img:hover { transform: scale(1.05); }
-    .nav-links {
       width: 100%;
-  height: 100%;
-  object-fit: cover;                /* Ensures image covers the circle */
-  filter: drop-shadow(0 0 8px gold); /* Optional extra glow */
+      height: 100%;
+      object-fit: cover;
+      filter: drop-shadow(0 0 8px gold);
+      transition: transform 0.3s;
     }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-weight: 600;
+    }
+
     .nav-links a {
       color: white;
       text-decoration: none;
@@ -132,10 +147,12 @@
       transition: all 0.3s;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+
     .nav-links a:hover {
       color: #F5C24A;
       text-shadow: 0 0 12px #F5C24A;
     }
+
     .buy-btn {
       background: linear-gradient(145deg, #B97A1F, #D89B2C);
       padding: 10px 22px;
@@ -147,6 +164,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       transition: all 0.3s;
     }
+
     .buy-btn:hover {
       background: #F5C24A;
       box-shadow: 0 0 25px #F5C24A;
@@ -557,13 +575,38 @@
       color: #1E2A44;
     }
 
-    /* mobile extra */
+    /* mobile friendly chatbot */
     @media (max-width: 600px) {
       .hero-text h1 { font-size: 2.8rem; }
       .section-title { font-size: 2.5rem; }
       .social-btn { font-size: 1.5rem; padding: 15px 35px; }
-      .chat-panel { width: 280px; right: 10px; }
+
+      /* chatbot panel takes more width on small screens */
+      .chat-panel {
+        width: calc(100% - 40px);
+        max-width: 380px;
+        right: 20px;
+        left: 20px;
+        margin: 0 auto;
+        height: 70vh;
+        bottom: 90px;
+      }
+
+      .chatbot-toggle {
+        bottom: 20px;
+        right: 20px;
+      }
     }
+
+    /* extra animation */
+    .buy-btn { animation: pulse-gold 2s infinite; }
+    @keyframes pulse-gold {
+      0% { box-shadow: 0 0 10px #F5C24A; }
+      50% { box-shadow: 0 0 30px #F5C24A; }
+      100% { box-shadow: 0 0 10px #F5C24A; }
+    }
+    ::-webkit-scrollbar { width: 6px; background: #1E2A44; }
+    ::-webkit-scrollbar-thumb { background: #F5C24A; border-radius: 20px; }
   </style>
 </head>
 <body>
@@ -803,17 +846,5 @@
       chatPanel.classList.remove('open');
     });
   </script>
-
-  <!-- extra animation -->
-  <style>
-    .buy-btn { animation: pulse-gold 2s infinite; }
-    @keyframes pulse-gold {
-      0% { box-shadow: 0 0 10px #F5C24A; }
-      50% { box-shadow: 0 0 30px #F5C24A; }
-      100% { box-shadow: 0 0 10px #F5C24A; }
-    }
-    ::-webkit-scrollbar { width: 6px; background: #1E2A44; }
-    ::-webkit-scrollbar-thumb { background: #F5C24A; border-radius: 20px; }
-  </style>
 </body>
-  </html>
+</html>
