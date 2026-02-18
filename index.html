@@ -105,26 +105,30 @@
       gap: 15px;
     }
 
-    /* BLENDED HEADER LOGO - no border, no background */
+    /* CIRCULAR HEADER LOGO with border and background */
     .logo {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #F5C24A;
+      box-shadow: 0 0 20px #F5C24A;
+      background: #1E2A44;  /* fallback / deep navy */
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 0 12px rgba(245, 194, 74, 0.6));
-      transition: filter 0.3s;
+      transition: box-shadow 0.3s;
     }
 
     .logo img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;    /* Ensures image fills the circle */
       filter: drop-shadow(0 0 8px gold);
     }
 
     .logo:hover {
-      filter: drop-shadow(0 0 25px #F5C24A);
+      box-shadow: 0 0 30px #F5C24A;
     }
 
     .nav-links {
@@ -234,7 +238,7 @@
       text-align: center;
     }
 
-    /* BLENDED HERO LOGO - replaces the pond effect */
+    /* BLENDED HERO LOGO - no border, no background, just glow */
     .hero-logo {
       width: 100%;
       max-width: 380px;
@@ -647,7 +651,7 @@
         </div>
       </div>
       <div class="hero-mascot">
-        <!-- Replaced pond effect with blended logo -->
+        <!-- Blended hero logo (no border, just image + glow) -->
         <div class="hero-logo">
           <img src="lotm.png" alt="Lion of MAGA mascot" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x380?text=LOTM';">
         </div>
@@ -846,4 +850,4 @@
     });
   </script>
 </body>
-</html>
+  </html>
