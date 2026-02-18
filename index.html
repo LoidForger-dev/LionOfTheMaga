@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <!-- SEO optimized -->
   <title>Lion of the MAGA ($LOTM) – Patriotic Meme Coin</title>
   <meta name="description" content="Lion of the MAGA: The ultimate meme token fusing American spirit with Web3 innovation. 0% tax, 1B supply, burn. Join the Pride.">
   <meta name="keywords" content="Lion of the MAGA, LOTM, meme coin, patriotic crypto, American dream, token, roadmap, NFT, staking">
@@ -106,30 +105,26 @@
       gap: 15px;
     }
 
-    /* Rounded logo container */
+    /* BLENDED HEADER LOGO - no border, no background */
     .logo {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #F5C24A;
-      box-shadow: 0 0 20px #F5C24A;
-      background: #1E2A44;
+      width: 80px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
+      filter: drop-shadow(0 0 12px rgba(245, 194, 74, 0.6));
+      transition: filter 0.3s;
     }
 
     .logo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       filter: drop-shadow(0 0 8px gold);
-      transition: transform 0.3s;
     }
 
-    .logo img:hover {
-      transform: scale(1.05);
+    .logo:hover {
+      filter: drop-shadow(0 0 25px #F5C24A);
     }
 
     .nav-links {
@@ -238,21 +233,27 @@
       flex: 1 1 280px;
       text-align: center;
     }
-    .mascot-placeholder {
-      background: rgba(30,42,68,0.2);
-      backdrop-filter: blur(8px);
-      border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
-      padding: 20px;
-      border: 4px solid #F5C24A;
-      box-shadow: 0 0 70px #F5C24A, inset 0 0 40px #F5C24A;
+
+    /* BLENDED HERO LOGO - replaces the pond effect */
+    .hero-logo {
+      width: 100%;
       max-width: 380px;
       margin: 0 auto;
+      filter: drop-shadow(0 0 25px rgba(245, 194, 74, 0.7));
+      transition: filter 0.3s;
     }
-    .mascot-placeholder i {
-      font-size: 10rem;
-      color: #F5C24A;
-      filter: drop-shadow(0 0 25px gold);
+
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 15px gold);
     }
+
+    .hero-logo:hover {
+      filter: drop-shadow(0 0 40px #F5C24A);
+    }
+
     .hero-ca {
       margin-top: 20px;
       background: rgba(0,0,0,0.3);
@@ -580,8 +581,6 @@
       .hero-text h1 { font-size: 2.8rem; }
       .section-title { font-size: 2.5rem; }
       .social-btn { font-size: 1.5rem; padding: 15px 35px; }
-
-      /* chatbot panel takes more width on small screens */
       .chat-panel {
         width: calc(100% - 40px);
         max-width: 380px;
@@ -591,7 +590,6 @@
         height: 70vh;
         bottom: 90px;
       }
-
       .chatbot-toggle {
         bottom: 20px;
         right: 20px;
@@ -649,8 +647,9 @@
         </div>
       </div>
       <div class="hero-mascot">
-        <div class="mascot-placeholder">
-          <i class="fas fa-lion"></i> <!-- mascot illustration -->
+        <!-- Replaced pond effect with blended logo -->
+        <div class="hero-logo">
+          <img src="lotm.png" alt="Lion of MAGA mascot" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x380?text=LOTM';">
         </div>
       </div>
     </section>
