@@ -106,17 +106,23 @@
       gap: 15px;
     }
     .logo img {
-      height: 55px;
-      width: auto;
-      filter: drop-shadow(0 0 12px #F5C24A);
-      transition: transform 0.3s;
+      width: 65px;          /* Adjust size as needed */
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #F5C24A;        /* Gold border */
+  box-shadow: 0 0 20px #F5C24A;     /* Glow effect */
+  background: #1E2A44;              /* Fallback background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
     }
     .logo img:hover { transform: scale(1.05); }
     .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-weight: 600;
+      width: 100%;
+  height: 100%;
+  object-fit: cover;                /* Ensures image covers the circle */
+  filter: drop-shadow(0 0 8px gold); /* Optional extra glow */
     }
     .nav-links a {
       color: white;
