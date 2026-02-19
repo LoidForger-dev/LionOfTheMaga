@@ -113,7 +113,7 @@
       overflow: hidden;
       border: 3px solid #F5C24A;
       box-shadow: 0 0 20px #F5C24A;
-      background: #1E2A44;  /* fallback / deep navy */
+      background: #1E2A44;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,7 +123,7 @@
     .logo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;    /* Ensures image fills the circle */
+      object-fit: cover;
       filter: drop-shadow(0 0 8px gold);
     }
 
@@ -434,14 +434,47 @@
       border: 2px solid #F5C24A;
     }
 
-    /* community */
+    /* community section with background image */
+    #community {
+      margin: 40px 0;
+    }
+
+    .community-content {
+      position: relative;
+      padding: 50px 30px;
+      border-radius: 80px;
+      overflow: hidden;
+      z-index: 1;
+      background: transparent; /* fallback */
+    }
+
+    .community-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('lotm1.png') center/cover no-repeat;
+      opacity: 0.25; /* subtle overlay for readability */
+      z-index: -1;
+    }
+
+    /* ensure text and buttons are above the overlay */
+    .community-content h2,
+    .community-content .community-buttons {
+      position: relative;
+      z-index: 2;
+    }
+
     .community-buttons {
       display: flex;
       justify-content: center;
       gap: 30px;
-      margin: 40px 0;
+      margin: 40px 0 0;
       flex-wrap: wrap;
     }
+
     .social-btn {
       padding: 18px 50px;
       border-radius: 80px;
@@ -455,6 +488,7 @@
       align-items: center;
       gap: 15px;
     }
+
     .social-btn:hover {
       background: #F5C24A;
       box-shadow: 0 0 50px #F5C24A;
@@ -739,12 +773,14 @@
       </div>
     </div>
 
-    <!-- Community -->
+    <!-- Community section with custom background image -->
     <section id="community">
-      <h2 class="section-title">JOIN THE PRIDE</h2>
-      <div class="community-buttons">
-        <a href="https://t.me/magaoffical" target="_blank" class="social-btn"><i class="fab fa-telegram-plane"></i> Telegram</a>
-        <a href="https://x.com/lotmoffical" target="_blank" class="social-btn"><i class="fab fa-twitter"></i> X (Twitter)</a>
+      <div class="community-content">
+        <h2 class="section-title">JOIN THE PRIDE</h2>
+        <div class="community-buttons">
+          <a href="https://t.me/magaoffical" target="_blank" class="social-btn"><i class="fab fa-telegram-plane"></i> Telegram</a>
+          <a href="https://x.com/lotmoffical" target="_blank" class="social-btn"><i class="fab fa-twitter"></i> X (Twitter)</a>
+        </div>
       </div>
     </section>
 
@@ -850,4 +886,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
